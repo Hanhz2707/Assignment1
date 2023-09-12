@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    //Creating Logger class
     public class Logger
     {
         private Logger() { }
         private static Logger instance;
 
+        //Implementing Singleton pattern
         public static Logger GetInstance()
         {
             if (instance == null)
@@ -19,6 +21,7 @@ namespace ConsoleApp1
             }
             return instance;
         }
+        //Adding a public method with a string as an agrument
         public void Log(string message)
         {
             Console.WriteLine(message);
@@ -27,6 +30,7 @@ namespace ConsoleApp1
     }
     class Program
     {
+        //Logger class was called in the main method
         static void Main(string[] args)
         {
             Logger logger1 = Logger.GetInstance();
